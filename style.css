@@ -1,0 +1,77 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: wheat;
+  color: teal;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 22px;
+}
+
+main {
+  display: grid;
+  grid-template-areas: "header header header" ". section ." "footer footer footer";
+  grid-template-rows: .3fr 0.5fr .2fr;
+  grid-template-columns: 20% 1fr 20%;
+  grid-gap: 3ch;
+  height: 100vh;
+  width: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: header;
+}
+
+section {
+  grid-area: section;
+}
+
+.roca{
+  padding: 5px;
+  display: inline-block;
+  position: relative;
+  color: #333333;
+  text-decoration: none;
+  border-bottom: 2px solid #333333;
+}
+
+.roca:hover {
+  color: wheat;
+  border-bottom: 2px solid teal;
+}
+
+.roca:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: teal;
+  z-index: -1;
+  transition: all 0.1s cubic-bezier(0, 0.59, 1, 0.26);
+}
+
+.roca:hover:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: teal;
+  z-index: -1;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: footer;
+}
